@@ -51,9 +51,55 @@ class DisplayCard {
  // DATABASES //
 ///////////////
 
-const interface = {};
+const interface = {
+  aperitifs: new Interface("aperitifs", "Apéritifs"),
+  boissons: new Interface("boissons", "Boissons"),
+  entrees: new Interface("entrees", "Entrées"),
+  plats: new Interface("plats", "Plats"),
+  desserts: new Interface("desserts", "Désserts"),
+};
 
-const database = {}
+const database = {
+  aperitifsDB:{
+    gougeresBoursin: new DisplayCard("Gougères au Boursin/Amuse Bouche", "https://img.cuisineaz.com/320x320/2020/12/16/i158452-gougeres-au-boursin-ail-fines-herbes.webp", "https://www.cuisineaz.com/recettes/gougeres-au-boursin-ail-fines-herbes-111477.aspx"),
+    tartareLangoustine: new DisplayCard("Tartare de Langoustine/Dips", "https://img.cuisineaz.com/320x320/2019/04/18/i146631-tartare-de-langoustine-passion-langoustine-snackee-beurre-de-gingembre-guacamole-vanille.webp", "https://www.cuisineaz.com/recettes/tartare-de-langoustine-passion-langoustine-snackee-beurre-de-gingembre-guacamole-vanille-106401.aspx"),
+  },
+  boissonsDB:{
+    sexOnTheBeach: new DisplayCard("Sex on the Beach/Cocktail alcoolisé", "https://img.cuisineaz.com/320x320/2019/07/10/i147916-sex-on-the-beach.webp", "https://www.cuisineaz.com/recettes/sex-on-the-beach-106916.aspx"),
+    cafeViennois: new DisplayCard("Café Viennois/Boisson Chaude", "https://img.cuisineaz.com/320x320/2015/04/27/i113775-cafe-viennois.webp", "https://www.cuisineaz.com/recettes/cafe-viennois-79596.aspx"),
+    chocolatCoco: new DisplayCard("Chocolat au lait de Coco/Boisson Chaude", "https://img.cuisineaz.com/320x320/2016/10/23/i103604-chocolat-chaud-au-lait-de-coco.webp", "https://www.cuisineaz.com/recettes/chocolat-chaud-au-lait-de-coco-90440.aspx"),
+  },
+  entreesDB:{
+    chevreChaud: new DisplayCard("Chèvre chaud sur canapé/Entrée chaude", "https://img.cuisineaz.com/320x320/2023/04/24/i193164-chevre-chaud-sur-canape.webp", "https://www.cuisineaz.com/recettes/chevre-chaud-sur-canape-45618.aspx"),
+    betterave: new DisplayCard("Betteraves au chèvre frais", "https://img.cuisineaz.com/320x320/2015/01/28/i47848-betteraves-au-chevre-frais.webp", "https://www.cuisineaz.com/recettes/betteraves-au-chevre-frais-44400.aspx"),
+    avocatThon: new DisplayCard("Avocat au thon", "https://img.cuisineaz.com/320x320/2016/03/17/i104041-avocat-au-thon.webp", "https://www.cuisineaz.com/recettes/avocat-au-thon-29826.aspx"),
+    saladRusse:new DisplayCard("Salade Russe/Salade", "https://img.cuisineaz.com/320x320/2013/12/20/i99711-salade-russe.webp", "https://www.cuisineaz.com/recettes/salade-russe-49397.aspx"),
+    saladAvocatSaumon: new DisplayCard("Salade avocat saumon/Salade", "https://img.cuisineaz.com/320x320/2015/07/31/i86099-salade-avocat-saumon.webp", "https://www.cuisineaz.com/recettes/salade-avocat-saumon-81844.aspx"),
+  },
+  platsDB:{
+    limande: new DisplayCard("Limande aux légumes/Poisson", "https://img.cuisineaz.com/320x320/2023/10/31/i196359-limande-legumes-rotis.webp", "https://www.cuisineaz.com/recettes/limande-aux-legumes-d-automne-rotis-116768.aspx"),
+    dorade:new DisplayCard("Dorade Royal au four/Poisson", "https://img.cuisineaz.com/320x320/2017/06/12/i128186-daurade-royale-au-four.webp", "https://www.cuisineaz.com/recettes/daurade-royale-au-four-97780.aspx"),
+    congre: new DisplayCard("Congre poêlé/Poisson", "https://img.cuisineaz.com/320x320/2019/05/15/i147184-congre-poele.webp", "https://www.cuisineaz.com/recettes/congre-poele-106644.aspx"),
+    filetPoulet: new DisplayCard("Filet de poulet sauté/Viande", "https://img.cuisineaz.com/320x320/2023/04/06/i192476-filet-de-poulet-a-la-moutarde-et-creme.webp", "https://www.cuisineaz.com/recettes/filets-de-poulet-sautes-a-la-moutarde-et-creme-69307.aspx"),
+    tourte: new DisplayCard("Tourte à la viande/Viande", "https://img.cuisineaz.com/320x320/2015/08/25/i87254-tourte-aux-legumes-et-viande-hachee.webp", "https://www.cuisineaz.com/recettes/tourte-a-la-viande-hachee-72752.aspx"),
+    kefta: new DisplayCard("Keftas/Viande" ,"https://img.cuisineaz.com/320x320/2017/01/11/i115527-kefta.webp", "https://www.cuisineaz.com/recettes/kefta-42062.aspx"),
+    jouePorc: new DisplayCard("Joues de porc mijotées/Viande", "", "https://www.cuisineaz.com/recettes/joues-de-porc-mijotees-a-la-moutarde-73526.aspx"),
+    ceviche: new DisplayCard("Ceviche de Poulpe/Fruits de mer", "https://img.cuisineaz.com/320x320/2023/08/28/i195823-ceviche-de-poulpe.webp", "https://www.cuisineaz.com/recettes/ceviche-de-poulpe-116621.aspx"),
+    stJacques: new DisplayCard("Saint Jacques à la Bretonne/Fruits de mer", "https://img.cuisineaz.com/320x320/2016/10/27/i32507-coquilles-st-jacques-a-la-bretonne.webp", "https://www.cuisineaz.com/recettes/coquilles-st-jacques-a-la-bretonne-80764.aspx"),
+    gambas: new DisplayCard("Gambas à l'ail/Fruits de mer", "https://img.cuisineaz.com/320x320/2019/11/04/i150642-gambas-a-l-ail-et-au-persil.webp", "https://www.cuisineaz.com/recettes/gambas-a-l-ail-et-au-persil-108833.aspx"),
+    hamburger: new DisplayCard("Hamburger maison/Fast Food", "https://img.cuisineaz.com/320x320/2013/12/20/i42852-hamburger.webp", "https://www.cuisineaz.com/recettes/hamburger-maison-23274.aspx"),
+    hotdog: new DisplayCard("HotDog/Fast Food", "https://img.cuisineaz.com/320x320/2022/11/14/i190050-hot-dog.webp", "https://www.cuisineaz.com/recettes/hot-dog-de-liguori-lecomte-115755.aspx"),
+    empenadas: new DisplayCard("Empanadas Mexicains/Fast Food", "https://img.cuisineaz.com/320x320/2015/12/22/i77716-empanadas-mexicains-au-chevre-maison.webp", "https://www.cuisineaz.com/recettes/empanadas-mexicains-au-chevre-maison-53522.aspx"),
+    calmar: new DisplayCard("Calmar poêlés/Fruit de mer", "https://img.cuisineaz.com/320x320/2016/04/28/i46954-calmar-poeles-a-l-ail-et-au-persil.webp", "https://www.cuisineaz.com/recettes/calmar-poeles-a-l-ail-et-au-persil-40432.aspx"),
+    tartiflette: new DisplayCard("Tartiflette du chef", "https://img.cuisineaz.com/320x320/2022/09/16/i187842-i0-tartiflette-etchebest-ok.webp", "https://www.cuisineaz.com/recettes/tartiflette-du-chef-philippe-etchebest-115216.aspx"),
+  },
+  dessertsDB:{
+    muffinChocolat: new DisplayCard("Muffins au coeur fondant/gateaux", "https://img.cuisineaz.com/320x320/2013/12/20/i34710-muffins-chocolat-au-coeur-fondant.webp", "https://www.cuisineaz.com/recettes/muffins-chocolat-au-coeur-fondant-14543.aspx"),
+    foretNoir: new DisplayCard("Forêt noire aux cerises noires/gateaux", "https://img.cuisineaz.com/320x320/2013/12/20/i110385-.webp", "https://www.cuisineaz.com/recettes/foret-noire-aux-cerises-noires-4388.aspx"),
+    painsAuChocolat: new DisplayCard("Mini pains choco-cannelle/Viennoiserie", "https://img.cuisineaz.com/320x320/2017/06/15/i128269-mini-pains-choco-cannelle-facile.webp", "https://www.cuisineaz.com/recettes/mini-pains-choco-cannelle-facile-97833.aspx"),
+    mochi: new DisplayCard("Mochi glacé/ Glace", "https://img.cuisineaz.com/320x320/2023/11/13/i196490-mochi-glace.webp", "https://www.cuisineaz.com/recettes/mochi-glace-107003.aspx"),
+  },
+}
 
   ///////////////////
  //// Functions ////
