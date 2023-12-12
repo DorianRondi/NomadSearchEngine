@@ -48,4 +48,4 @@ Pour ma version j'ai utlisé l'API de Unsplash pour avoir un background différe
 Pour connaitre les règles de cette API : [Unsplash API](https://awik.io/generate-random-images-unsplash-without-using-api/)
 
 * #### Bonus
-En bonus un section n'est destiné qu'à admirer vos background
+En bonus, une section est destinée uniquement à admirer vos backgrounds
