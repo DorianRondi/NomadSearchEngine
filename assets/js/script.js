@@ -21,6 +21,7 @@ class Interface {
   }
 }
 
+// Modifiez cette classe selon vos besoin //
 class DisplayCard {
   constructor(_title, _img, _url) {
     this._title = _title;
@@ -51,8 +52,8 @@ class DisplayCard {
  // DATABASES //
 ///////////////
 
+// Respectez l'architecture décrite dans la documentation //
 const interface = {};
-
 const database = {}
 
   ///////////////////
@@ -91,23 +92,6 @@ function copyToClipBoard(password, login = false) {
         .catch((err) => {
             console.error("Erreur lors de la copie dans le Clipboard : ", err);
         });
-}
-
-function switchWallpaper() {
-  const body = document.querySelector("#body");
-  const currentSize = window.getComputedStyle(body).getPropertyValue("background-size");
-  
-  switch (currentSize) {
-    case "cover":
-      body.style.backgroundSize = "contain";
-      break;
-    case "contain":
-      body.style.backgroundSize = "initial";
-      break;
-    default:
-      body.style.backgroundSize = "cover";
-      break;
-  }
 }
 
 function sortByTitle(listDB) {
@@ -182,8 +166,19 @@ function createCategory(Interface){
     button.addEventListener("click", function() {switchWallpaper();});
     full.appendChild(button);
   }
+  
+  if(Interface._category == "wallpaper"){
+    const button = document.createElement("button");
+    button.id = "zoom";
+    button.classList.add("btn", "btn-outline-light", "btn-sm", "darker", "mb-3", "ms-3");
+    button.innerText = "Zoom";
+    button.addEventListener("click", function() {zoomWallpaper();});
+    full.appendChild(button);
+  }
 }
 
+// Modifiez cette fonction pour modifier l'affichage des Cards //
+// Ne pas modifier les constantes précédents cardBody sous peine de perdre la cohérence de l'affichage //
 function createCard(DisplayCard,selector) {
   
   const row = document.querySelector(selector);
@@ -270,7 +265,7 @@ function search(query) {
 
   Object.keys(interface).forEach(interfaceKey => {
     const itemKey = {};
-    const dataObjectKey = interface[interfaceKey]._category + "DB";
+    const dataObjectKey = interface[interfaceKey]._category;
     const dataObject = database[dataObjectKey];
     
     if (dataObject) {
@@ -297,7 +292,7 @@ function displayResults(results) {
 function generateUserInterface(InterfaceXP, data){
 
   Object.keys(InterfaceXP).forEach(interfaceKey => {
-    const dataObjectKey = InterfaceXP[interfaceKey]._category + "DB";
+    const dataObjectKey = InterfaceXP[interfaceKey]._category;
     const dataObject = data[dataObjectKey];
 
     console.log("dataObject length ", Object.keys(dataObject).length);
@@ -322,6 +317,35 @@ function generateUserInterface(InterfaceXP, data){
   establishCategory(wallpaper);
 
   initTooltips();
+}
+
+///////////////////
+// Bouton Switch //
+///////////////////
+
+function switchWallpaper() {
+  location.reload()
+}
+
+/////////////////
+// Bouton Zoom //
+/////////////////
+
+function zoomWallpaper() {
+  const bodyZoom = document.querySelector(".wallpaper");
+  const currentSize = window.getComputedStyle(bodyZoom).getPropertyValue("background-size");
+
+  switch (currentSize) {
+    case "cover":
+      bodyZoom.style.backgroundSize = "contain";
+      break;
+    case "contain":
+      bodyZoom.style.backgroundSize = "initial";
+      break;
+    default:
+      bodyZoom.style.backgroundSize = "cover";
+      break;
+  }
 }
 
 //////////////////////////////////////////
